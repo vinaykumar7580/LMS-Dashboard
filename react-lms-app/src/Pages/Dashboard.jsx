@@ -13,6 +13,7 @@ import { MdOutlineSpaceDashboard } from "react-icons/md";
 import { AiFillIeCircle, AiOutlineCheckCircle } from "react-icons/ai";
 import { MdOutlineAccessTime } from "react-icons/md";
 import { TbBook } from "react-icons/tb";
+import {useNavigate} from "react-router-dom"
 
 let data = [
   {
@@ -126,6 +127,9 @@ let data = [
 ];
 
 function Dashboard() {
+
+  const navigate=useNavigate()
+
   return (
     <Box
       h={"100vh"}
@@ -154,6 +158,8 @@ function Dashboard() {
               justifyContent={"left"}
               alignItems={"center"}
               gap={"10px"}
+              cursor={"pointer"}
+              onClick={()=>navigate("/")}
             >
               <MdOutlineSpaceDashboard size={"18px"} />
               <Text>Dashboard</Text>
@@ -167,6 +173,8 @@ function Dashboard() {
               justifyContent={"left"}
               alignItems={"center"}
               gap={"10px"}
+              cursor={"pointer"}
+              onClick={()=>navigate("/browse")}
             >
               <AiFillIeCircle size={"18px"} />
               <Text>Browse</Text>
